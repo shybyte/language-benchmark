@@ -1,0 +1,22 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "zig build run"
+        },
+        {
+            "label": "Run Release",
+            "type": "shell",
+            "command": "zig build run -Dtarget=native -Drelease-safe"
+        },
+        {
+            "label": "Run Release Fast",
+            "type": "shell",
+            "command": "zig build run -Dtarget=native -Drelease-fast"
+        }
+    ]
+}

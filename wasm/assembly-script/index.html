@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Wasm AS</title>
+  <script src="https://cdn.jsdelivr.net/npm/@assemblyscript/loader/umd/index.js"></script>
+</head>
+<body>
+
+<button id="runButton">Run Wasm AS</button>
+
+<script type="module">
+  const imports = {
+    index: console,
+  };
+  const helloModule = await loader.instantiate(fetch("./build/optimized.wasm"), imports);
+  console.log("helloModule", helloModule);
+
+  document.getElementById("runButton").addEventListener("click", () => {
+    helloModule.instance.exports.main();
+  });
+
+
+  for (let i = 0; i < 1; i++) {
+    helloModule.instance.exports.main();
+  }
+</script>
+
+</body>
+</html>

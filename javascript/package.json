@@ -1,0 +1,16 @@
+{
+  "name": "language-benchmark-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blame.js",
+  "scripts": {
+    "start": "ts-node blame.ts",
+    "start-simple": "ts-node blame-simple.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "ts-node": "^10.5.0"
+  }
+}
